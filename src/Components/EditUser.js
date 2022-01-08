@@ -8,12 +8,12 @@ export default function EditUser({match})
 {
     const[name,setName]= useState("");
     const[email,setEmail] = useState("");
-    const[location,setLocation]= useState("")
+    const[location,setLocation]= useState("");
+    const[phone,setPhone]=useState("");
     const context = useContext(Context);
     const [userNotEdited,setUserNotEdited] = useState(true);
     let setInput = async()=>{
         let uservalue = context.users.filter((user)=>user.id===match.params.id)
-        //to fetch api and get user if page refreshed
          if(uservalue.length===0)
          {
           const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
@@ -30,9 +30,7 @@ export default function EditUser({match})
     useEffect(()=>{
       setInput();
     },[])
-     
-
-    let PutUser = async()=>{
+  let PutUser = async()=>{
         const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`,{
             method:"PUT",
             headers:{
@@ -42,6 +40,7 @@ export default function EditUser({match})
                 name:name,
                 email:email,
                 location:location,
+                phone:phone,
             })
         });
         const data = await userdata.json();
@@ -66,21 +65,23 @@ export default function EditUser({match})
         <div className="container">
            { userNotEdited ? 
            (<> 
-        <h1 className="text-center text-info">Edit User {match.params.id}</h1>
+        <h1 className="text-center text-info">Update User{match.params.id}</h1>
         <EditAndCreateUser
               name={name}
               email={email}
               location={location}
+              phone={phone}
               setName={setName}
               setEmail={setEmail}
               setLocation={setLocation}
+              setPhone={setPhone}
               handleSubmit={handleSubmit}
             />
         </>)
         :
         (<>
          <div className="confirmtext">
-        <h1>User Edited</h1> 
+        <h1>User Details Updated</h1> 
         <i className="fas fa-check-circle"></i>
         </div>
         </>)}
