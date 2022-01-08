@@ -76,7 +76,7 @@ return(
           <div className="container">
           {profileNotedited ? 
           (<>    
-        <h1 className="text-center text-info">Edit Profile {match.params.id}</h1>
+        <h1 className="text-center text-info">Edit Profile - {match.params.id}</h1>
         <ProfileEdit 
         name={name}
         email={email}
