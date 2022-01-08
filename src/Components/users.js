@@ -2,22 +2,14 @@ import {Link} from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../Context";
 //import axios from "axios";
-
-    
-    
-
-function Users()
-{
-    //using context to get the users
+function Users(){
      let context = useContext(Context);
-
-     //to get the userid to delete
+  //to get the userid to delete
     let deleteid;
     let getdeleteid=(id)=>{
          deleteid = id;
     }
-
-     // to delete user in api
+   // to delete user in api
    let deleteuser= async()=>{
          //const {data} = await axios.delete(`https://611f26469771bf001785c730.mockapi.io/users/${deleteid}`);
          const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${deleteid}`,{method:"DELETE"});
@@ -41,13 +33,13 @@ function Users()
                         </div>
                        <div className="col-md-6 text-left mb-2 text-md-right">
                          
-                       <Link to={`edit-profile/${user.id}`} className="btn btn-outline-info  ">Edit Profile</Link>
+                       <Link to={`edit-profile/${user.id}`} className="btn btn-outline-info">Edit Profile</Link>
                        
                        </div>
                         
                         </div>
                         <p><b>Email</b><br/>{user.email}</p>
-                        <p><b>Country</b><br/>{user.country}</p>
+                        <p><b>Location</b><br/>{user.location}</p>
                         <div className="mt-2 row" >
                             <Link to={`edituser/${user.id}`} className="btn col-md-3 mt-2 col-lg-2 btn-outline-primary mx-2">Edit User</Link>
                             <Link to={`profile/${user.id}`} className="btn  col-lg-2 mt-2 col-md-3 btn-dark  mx-2">Profile</Link>
@@ -61,12 +53,10 @@ function Users()
            <div className="modal  fade" id="mymodal">
                <div className="modal-dialog modal-lg">
                    <div className="modal-content">
-               <div className="modal-body">
-                   Are you sure, You want to delete User?
-               </div>
+               <div className="modal-body"> surely,You want to delete User?</div>
                <div className="modal-footer">
                    <button className="btn btn-danger" data-dismiss="modal" onClick={deleteuser} >Delete</button>
-                   <button className="btn btn-info" data-dismiss="modal" >Cancel</button>
+                   <button className="btn btn-primary" data-dismiss="modal" >Cancel</button>
                </div>
                </div>
                </div>
