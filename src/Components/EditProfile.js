@@ -96,11 +96,11 @@ export default function EditProfile({match})
         <ProfileEdit 
         name={name}
         email={email}
-        id:{id}
-        role:{role}
-        avatar:{avatar}
-        location:{location}
-        phone:{phone}
+        id={id}
+        role={role}
+        avatar={avatar}
+        location={location}
+        phone={phone}
         setName={setName}
         setEmail={setEmail}
         setId={setId}
