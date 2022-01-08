@@ -7,19 +7,14 @@ import EditAndCreateUser from "./subComponents/EditAndCreateUser";
 function CreateUser()
 {
   
-    const [name,setName] = useState("");
-    const[email,setEmail] = useState("");
-    const[country,setCountry] = useState("");
+     const [name,setName] = useState("");
+     const[email,setEmail] = useState("");
+     const[location,setLocation] = useState("");
+     const[phone,setPhone] = useState("");
      const context = useContext(Context);
      const[useradded,setUseradded] = useState(true);
     //to post user to API
    let postuser= async()=>{
-      /*const{data} = await axios.post("https://611f26469771bf001785c730.mockapi.io/users",
-      {
-          name:name,
-          email:email,
-          country:country
-      });*/
       const userdata = await fetch("https://611f24619771bf001785c6fb.mockapi.io/user/",{
           method:"POST",
           headers:{
@@ -28,7 +23,8 @@ function CreateUser()
           body:JSON.stringify({
             name:name,
             email:email,
-            country:country
+            location:location,
+            phone:phone,
           })
       });
       const data = await userdata.json();
@@ -60,10 +56,12 @@ function CreateUser()
             <EditAndCreateUser
               name={name}
               email={email}
-              country={country}
+              location={location}
+              phone={phone}
               setName={setName}
               setEmail={setEmail}
-              setCountry={setCountry}
+              setLocation={setLocation}
+              setPhone={setPhone}
               handleSubmit={handleSubmit}
             />
         </>)
