@@ -32,8 +32,7 @@ function Users(){
                         </h3>
                         </div>
                        <div className="col-md-6 text-left mb-2 text-md-right">
-                         
-                       <Link to={`edit-profile/${user.id}`} className="btn btn-warning-info">Edit Profile</Link>
+                       <Link to={`edit-profile/${user.id}`} className="btn col-md-3 mt-2 col-lg-2 btn-warning mx-2">Edit Profile</Link>
                        
                        </div>
                         
