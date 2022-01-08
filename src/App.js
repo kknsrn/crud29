@@ -19,7 +19,7 @@ function App()
 
     let GetUsers= async()=>{
        // const {data} = await axios.get("https://611f26469771bf001785c730.mockapi.io/users");
-        const userdata = await fetch("https://611f26469771bf001785c730.mockapi.io/users");
+        const userdata = await fetch("https://611f24619771bf001785c6fb.mockapi.io/user/");
         const data = await userdata.json();
         //console.log(data);
         setUsers(data);
