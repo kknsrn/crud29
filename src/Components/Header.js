@@ -4,7 +4,7 @@ function Header()
 {
     return(
         <>
-        <div className="navbar navbar-expand-md bg-light navbar-light">
+        <div className="navbar navbar-expand-md navbar-info justify-content-sm-start bg-info mb-5">
             <span className="navbar-brand">CRUD</span>
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navcollapse">
                 <span className="navbar-toggler-icon"></span>
