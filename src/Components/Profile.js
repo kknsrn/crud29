@@ -42,7 +42,7 @@ export default function Profile({match})
                    <p><b>Name</b><br/>
                     {user.name}
                    </p>
-                   <p><b>id</b><br/>
+                   <p><b>Id</b><br/>
                     {user.id}
                    </p>
                    <p><b>Email</b><br/>
