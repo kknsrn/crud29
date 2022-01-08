@@ -7,11 +7,12 @@ export default function EditProfile({match})
 {
 
     const[name,setName] = useState("");
+    const[id,setId] = useState("");
+    const[role,setRole]=useState("");
     const[email,setEmail] = useState("");
-    const[company,setCompany] = useState("");
-    const[country,setCountry] = useState("");
-    const[city,setCity] = useState("");
-    const[address,setAddress] = useState("");
+    const[avatar,setAvatar] = useState("");
+    const[location,setLocation] = useState("");
+    const[phone,setPhone] = useState("");
     const context = useContext(Context);
     const[profileNotedited,setProfileNotEdited] = useState(true);
 
@@ -28,11 +29,13 @@ export default function EditProfile({match})
         }
         uservalue.forEach((user)=>{
             setName(user.name);
+            setId(user.id);
+            setRole(user.role);
             setEmail(user.email);
-            setCompany(user.company);
-            setCountry(user.country);
-            setCity(user.city);
-            setAddress(user.address);
+            setRole(user.role);
+            setAvatar(user.avatar);
+            setLocation(user.location);
+            setPhone(user.phone);
         })
     }
 
@@ -59,10 +62,12 @@ export default function EditProfile({match})
             body:JSON.stringify({
                 name:name,
                 email:email,
-                company:company,
-                country:country,
-                city:city,
-                address:address
+                id:id,
+                role:role,
+                avatar:avatar,
+                location:location,
+                phone:phone,
+               
             })
         });
         const data = await userdata.json();
@@ -91,16 +96,18 @@ export default function EditProfile({match})
         <ProfileEdit 
         name={name}
         email={email}
-        company={company}
-        country={country}
-        city={city}
-        address={address}
+        id:{id}
+        role:{role}
+        avatar:{avatar}
+        location:{location}
+        phone:{phone}
         setName={setName}
         setEmail={setEmail}
-        setCompany={setCompany}
-        setCountry={setCountry}
-        setCity={setCity}
-        setAddress={setAddress}
+        setId={setId}
+        setRole={setRole}
+        setAvatar={setAvatar}
+        setLocation={setLocation}
+        setphone={setPhone}
         handleSubmit={handleSubmit}
         />
         </>)
@@ -108,7 +115,7 @@ export default function EditProfile({match})
         (
             <>
             <div className="confirmtext">
-           <h1>Profile Edited</h1> 
+           <h1>Profile Updated</h1> 
            <i className="fas fa-check-circle"></i>
            </div>
            </>
