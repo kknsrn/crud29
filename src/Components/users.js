@@ -33,7 +33,7 @@ function Users(){
                         </div>
                        <div className="col-md-6 text-left mb-2 text-md-right">
                          
-                       <Link to={`edit-profile/${user.id}`} className="btn btn-outline-info">Edit Profile</Link>
+                       <Link to={`edit-profile/${user.id}`} className="btn btn-warning-info">Edit Profile</Link>
                        
                        </div>
                         
@@ -41,7 +41,7 @@ function Users(){
                         <p><b>Email</b><br/>{user.email}</p>
                         <p><b>Location</b><br/>{user.location}</p>
                         <div className="mt-2 row" >
-                            <Link to={`edituser/${user.id}`} className="btn col-md-3 mt-2 col-lg-2 btn-outline-primary mx-2">Edit User</Link>
+                            <Link to={`edituser/${user.id}`} className="btn col-md-3 mt-2 col-lg-2 btn-primary mx-2">Edit User</Link>
                             <Link to={`profile/${user.id}`} className="btn  col-lg-2 mt-2 col-md-3 btn-dark  mx-2">Profile</Link>
                             <button className="btn btn-danger  col-lg-2 col-md-3 mt-2 mx-2" data-toggle="modal" data-target="#mymodal" onClick={()=>getdeleteid(user.id)} >Delete</button>
                         </div>   
