@@ -11,8 +11,9 @@ function Header()
             </button>
             <div className="collapse navbar-collapse" id="navcollapse">
                 <ul className="navbar-nav ml-auto mr-5">
-                    <li className="nav-item mx-3"><NavLink exact to="/" className="nav-link headertext " activeClassName="headerlink">Home</NavLink></li>
-                    <li className="nav-item mx-3"><NavLink exact to="/" className="nav-link headertext " activeClassName="headerlink">Users</NavLink></li>
+                   
+            <li className="nav-item mx-3"><NavLink to="/" activeClassName="headerlink  " className="nav-link headertext">Home</NavLink></li>
+            <li className="nav-item mx-3"><NavLink to="/" activeClassName="headerlink  " className="nav-link headertext">Users</NavLink></li>
                     <li className="nav-item mx-3"><NavLink to="/createuser" activeClassName="headerlink  " className="nav-link headertext">Create User</NavLink></li>
                 </ul>
             </div>
