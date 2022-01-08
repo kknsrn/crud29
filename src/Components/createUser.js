@@ -20,7 +20,7 @@ function CreateUser()
           email:email,
           country:country
       });*/
-      const userdata = await fetch("https://611f26469771bf001785c730.mockapi.io/users",{
+      const userdata = await fetch("https://611f24619771bf001785c6fb.mockapi.io/user/",{
           method:"POST",
           headers:{
               "content-type":"application/json"
