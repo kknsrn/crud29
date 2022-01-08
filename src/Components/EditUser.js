@@ -22,7 +22,7 @@ export default function EditUser({match})
          if(uservalue.length===0)
          {
             //const {data} = await axios.get(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
-            const userdata = await fetch(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
+            const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
            const data = await userdata.json();
             uservalue.push(data);
          }
@@ -46,7 +46,7 @@ export default function EditUser({match})
             country:country
 
         });*/
-        const userdata = await fetch(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`,{
+        const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"
