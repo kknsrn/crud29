@@ -17,7 +17,7 @@ export default function Profile({match})
         else{
             // const {data} = await axios.get(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
              
-             const users = await fetch(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
+             const users = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
              const data = await users.json();
              console.log(data);
              setUser([data]);
