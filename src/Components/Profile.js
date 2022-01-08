@@ -45,6 +45,9 @@ export default function Profile({match})
                    <p><b>Id</b><br/>
                     {user.id}
                    </p>
+                   <p><b>Role</b><br/>
+                    {user.role}
+                   </p>
                    <p><b>Email</b><br/>
                     {user.email}
                    </p>
@@ -56,8 +59,7 @@ export default function Profile({match})
                    </p>
                    <p><b>Phone</b><br/>
                     {user.phone}
-                   </p>
-                  
+                   </p>   
                </div>
            </div>
          
