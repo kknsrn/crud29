@@ -15,14 +15,10 @@ export default function EditProfile({match})
     const[phone,setPhone] = useState("");
     const context = useContext(Context);
     const[profileNotedited,setProfileNotEdited] = useState(true);
-
-     //to set the inputfields when editprofile button clicked
     let setInput = async()=>{
         let uservalue = context.users.filter((user)=>user.id===match.params.id);
-        //if page refreshed this will fetch api and set input fileds
         if(uservalue.length===0)
         {
-           //const {data} = await axios.get(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
            const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
            const data = await userdata.json();
            uservalue.push(data);
@@ -46,14 +42,7 @@ export default function EditProfile({match})
    
       
       let putuser = async()=>{
-          /*const {data} = await axios.put(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`,{
-              name:name,
-              email:email,
-              company:company,
-              country:country,
-              city:city,
-              address:address
-          })*/
+      
           const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`,{
             method:"PUT",
             headers:{
@@ -78,16 +67,11 @@ export default function EditProfile({match})
           setProfileNotEdited(false);
       }
       
-
-      //handle the submit and call putuser
      let handleSubmit =(event)=>{
            event.preventDefault();
            putuser();
      }
-  
-
-     
-    return(
+return(
         <>
           <div className="container">
           {profileNotedited ? 
