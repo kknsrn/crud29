@@ -6,46 +6,33 @@ import EditAndCreateUser from "./subComponents/EditAndCreateUser";
 
 export default function EditUser({match})
 {
-    
-   
     const[name,setName]= useState("");
     const[email,setEmail] = useState("");
-    const[country,setCountry]= useState("")
+    const[location,setLocation]= useState("")
     const context = useContext(Context);
     const [userNotEdited,setUserNotEdited] = useState(true);
-    
-
-    //to set the user data in input when clicked editprofile button
     let setInput = async()=>{
         let uservalue = context.users.filter((user)=>user.id===match.params.id)
         //to fetch api and get user if page refreshed
          if(uservalue.length===0)
          {
-            //const {data} = await axios.get(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`);
-            const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
+          const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`);
            const data = await userdata.json();
             uservalue.push(data);
          }
         uservalue.forEach((user)=>{
             setName(user.name);
             setEmail(user.email);
-            setCountry(user.country);
+            setLocation(user.location);
         })
     }
 
     useEffect(()=>{
       setInput();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
      
 
     let PutUser = async()=>{
-       /* const {data} = await axios.put(`https://611f26469771bf001785c730.mockapi.io/users/${match.params.id}`,{
-            name:name,
-            email:email,
-            country:country
-
-        });*/
         const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${match.params.id}`,{
             method:"PUT",
             headers:{
@@ -54,7 +41,7 @@ export default function EditUser({match})
             body:JSON.stringify({
                 name:name,
                 email:email,
-                country:country,
+                location:location,
             })
         });
         const data = await userdata.json();
@@ -83,10 +70,10 @@ export default function EditUser({match})
         <EditAndCreateUser
               name={name}
               email={email}
-              country={country}
+              location={location}
               setName={setName}
               setEmail={setEmail}
-              setCountry={setCountry}
+              setLocation={setLocation}
               handleSubmit={handleSubmit}
             />
         </>)
