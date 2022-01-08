@@ -42,21 +42,22 @@ export default function Profile({match})
                    <p><b>Name</b><br/>
                     {user.name}
                    </p>
+                   <p><b>id</b><br/>
+                    {user.id}
+                   </p>
                    <p><b>Email</b><br/>
                     {user.email}
                    </p>
-                   <p><b>Company</b><br/>
-                    {user.company}
+                   <p><b>Avatar</b><br/>
+                    {user.avatar}
                    </p>
-                   <p><b>Country</b><br/>
-                    {user.country}
+                   <p><b>Loaction</b><br/>
+                    {user.location}
                    </p>
-                   <p><b>City</b><br/>
-                    {user.city}
+                   <p><b>Phone</b><br/>
+                    {user.phone}
                    </p>
-                   <p><b>Address</b><br/>
-                    {user.address}
-                   </p>
+                  
                </div>
            </div>
          
