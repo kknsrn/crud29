@@ -7,26 +7,19 @@ import Profile from "./Components/Profile";
 import EditProfile from "./Components/EditProfile";
 import {useEffect,useState} from "react";
 import {Context} from "./Context";
-//import axios from "axios";
 import "./Components/components.css";
 
-//first used axios then commented the axios code in all components and replaced it with fetch
 function App()
 {
     const [users,setUsers]= useState([]);
     
-
-
     let GetUsers= async()=>{
-       // const {data} = await axios.get("https://611f26469771bf001785c730.mockapi.io/users");
         const userdata = await fetch("https://611f24619771bf001785c6fb.mockapi.io/user/");
         const data = await userdata.json();
-        //console.log(data);
         setUsers(data);
        
     }
-
-    useEffect(()=>
+useEffect(()=>
     {   
         GetUsers();
         console.log("rendered");
