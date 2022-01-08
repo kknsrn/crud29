@@ -1,32 +1,17 @@
-
-
-function EditAndCreateUser(props)
-{
-
-    //to set the values of name,email,country in inputfiled
-    let handleInput =({target:{value,name}})=>{
-        if(name==="name")
-        {
-            props.setName(value);
-        }
-        if(name==="email")
-        {
-            props.setEmail(value);
-        }
-        if(name==="country")
-        {
-            props.setCountry(value);
-        }
-}
-           
-    return(
+function EditAndCreateUser(props){
+   let handleInput =({target:{value,name}})=>{
+        if(name==="name"){props.setName(value);}
+        if(name==="email"){props.setEmail(value);}
+        if(name==="location"){props.setLocation(value);}
+   }
+return(
         <>
         <div className="card mx-auto createuser" >
             <div className="card-body">
              <form className="form">
                  <div className="form-group">
                     <label className="font-weight-bold">Name:</label><br/>
-                    <input className="form-control" type="text" placeholder="userName"
+                    <input className="form-control" type="text" placeholder="Enter Your Name"
                      value={props.name} 
                      onChange={handleInput}
                      name="name"
@@ -34,24 +19,24 @@ function EditAndCreateUser(props)
                 </div>
                 <div className="form-group">
                     <label className="font-weight-bold">Email:</label><br/>
-                    <input className="form-control" type="email" placeholder="Email" 
+                    <input className="form-control" type="email" placeholder="ENter Your Email" 
                     value={props.email} 
                     onChange={handleInput}
                     name="email"
                     />
                 </div>
                 <div className="form-group">
-                    <label className="font-weight-bold">Country:</label><br/>
-                    <input className="form-control" type="text" placeholder="Country" 
-                    value={props.country} 
+                    <label className="font-weight-bold">Location:</label><br/>
+                    <input className="form-control" type="text" placeholder="Enter Your Location" 
+                    value={props.location} 
                     onChange={handleInput}
-                    name="country"
+                    name="location"
                     />
                 </div>
                
                 <br/>
                 <div className="text-center">
-                <button className="mx-auto btn btn-primary"  type="submit" onClick={props.handleSubmit}>Submit</button>
+                <button className="mx-auto btn btn-sucess"  type="submit" onClick={props.handleSubmit}>Submit</button>
                 </div>
              </form>
             </div>
