@@ -20,7 +20,7 @@ function Users()
      // to delete user in api
    let deleteuser= async()=>{
          //const {data} = await axios.delete(`https://611f26469771bf001785c730.mockapi.io/users/${deleteid}`);
-         const userdata = await fetch(`https://611f26469771bf001785c730.mockapi.io/users/${deleteid}`,{method:"DELETE"});
+         const userdata = await fetch(`https://611f24619771bf001785c6fb.mockapi.io/user/${deleteid}`,{method:"DELETE"});
          const data = await userdata.json();
          console.log(data);
          let tempusers = context.users.filter((x)=>x.id !== deleteid );
